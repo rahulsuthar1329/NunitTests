@@ -14,7 +14,7 @@ public class ConfigBrowser : DriverManager
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.AddArguments("disable-notifications");
-                chromeOptions.AddArguments("--headless=false");
+                // chromeOptions.AddArguments("--headless=false");
                 return new ChromeDriver(chromeOptions);
             case "firefox":
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
