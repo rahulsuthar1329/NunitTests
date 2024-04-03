@@ -22,6 +22,8 @@ namespace EcommerceAutomation
             config = ConfigureCredentials();
             credentials = new Credentials(config);
             new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
+            Console.WriteLine("Env variable : " + Environment.GetEnvironmentVariable("BrowserName"));
+
             driver = new ConfigBrowser().GetBrowser(Environment.GetEnvironmentVariable("BrowserName"));
 
             homepage = new HomePage(driver);
