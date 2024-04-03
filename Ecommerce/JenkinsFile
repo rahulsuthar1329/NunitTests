@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                git 'https://rahulsuthar1329@bitbucket.org/nettraining2024/sdettraining_rahulsuthar.git'
+            }
+        }
+        stage('Build Code')
+        {
+            steps{
+                bat script: 'dotnet restore .'
+                bat script: 'dotnet test'
+            }
+        }
+    }
+}
