@@ -6,7 +6,7 @@ pipeline {
         {
             steps {
                 bat script: "dotnet restore ."
-                bat script: "dotnet test -e \"BrowserName={browserName}\""
+                bat script: "dotnet test -e \"BrowserName=${browserName}\""
             }
         }
     }
