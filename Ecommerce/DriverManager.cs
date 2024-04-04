@@ -19,7 +19,6 @@ namespace EcommerceAutomation
             report = new ExtentReporting();
             report.CreateTest(TestContext.CurrentContext.Test.Name);
 
-            //configure credentials
             config = ConfigureCredentials();
             credentials = new Credentials(config);
             new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
