@@ -1,13 +1,29 @@
-pipeline {
-    agent any
+// pipeline {
+//     agent any
 
-    stages {
-        stage('Build Code')
-        {
-            steps {
-                bat script: "dotnet restore ."
-                bat script: "dotnet test -e \"BrowserName=${browserName}\""
-            }
-        }
+//     stages {
+//         stage('Build Code')
+//         {
+//             steps {
+//                 bat script: "dotnet restore ."
+//                 bat script: "dotnet test -e \"BrowserName=${browserName}\""
+//             }
+//         }
+//     }
+// }
+
+pipeline {
+  agent any
+
+  stages {
+    stage('Build Code') {
+      steps {
+        script: // Use 'sh' only for complex shell commands
+          sh """
+          dotnet restore .
+          dotnet test -e "BrowserName=${browserName}"
+          """
+      }
     }
+  }
 }
