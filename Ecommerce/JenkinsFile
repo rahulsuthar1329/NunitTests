@@ -20,7 +20,7 @@ pipeline {
       steps {
         script: // Use 'sh' only for complex shell commands
           sh """
-          sudo apt install dotnet-sdk-8.0
+          sudo apt install dotnet-sdk-8.0 -y
           dotnet restore .
           dotnet test -e "BrowserName=${browserName}"
           """
