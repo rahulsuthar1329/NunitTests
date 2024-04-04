@@ -21,6 +21,9 @@ pipeline {
         script: // Use 'sh' only for complex shell commands
           sh """
           source /etc/os-release
+          ID=${ID}
+          VERSION_ID=${VERSION_ID}
+          
           wget https://packages.microsoft.com/config/$ID/$VERSION_ID/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
           sudo dpkg -i packages-microsoft-prod.deb
           rm packages-microsoft-prod.deb
